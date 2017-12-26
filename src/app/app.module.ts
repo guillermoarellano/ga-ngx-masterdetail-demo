@@ -3,11 +3,17 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
+import { SidenavComponent } from './layout/sidenav/sidenav.component';
+import { ReposListComponent } from './repos/repos-list.component';
+import { RepoLanguagesComponent } from './repos/repo-languages.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SidenavComponent,
+    ReposListComponent,
+    RepoLanguagesComponent,
   ],
   imports: [
     BrowserModule
