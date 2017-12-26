@@ -10,10 +10,7 @@
                 [mode]="mobileQuery.matches ? 'over' : 'side'"
                 [fixedInViewport]="mobileQuery.matches" 
                 fixedTopGap="56">
-      <mat-nav-list>
-        <h3 matSubheader>Repo Names</h3>
-        <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a>
-      </mat-nav-list>
+      <app-repos-list></app-repos-list>
     </mat-sidenav>
 
     <mat-sidenav-content>

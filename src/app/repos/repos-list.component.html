@@ -1,3 +1,4 @@
-<p>
-  repos-list works!
-</p>
+<mat-nav-list>
+  <h3 matSubheader>Repo Names</h3>
+  <a mat-list-item routerLink="." *ngFor="let repo_name of repos">{{repo_name}}</a>
+</mat-nav-list>
