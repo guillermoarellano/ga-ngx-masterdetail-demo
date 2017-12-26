@@ -1,5 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { 
+  MatIconModule, 
+  MatListModule,
+  MatSidenavModule, 
+  MatToolbarModule, 
+} from '@angular/material';
+import {LayoutModule} from '@angular/cdk/layout';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +24,13 @@ import { RepoLanguagesComponent } from './repos/repo-languages.component';
     RepoLanguagesComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule,
+    LayoutModule,
+    MatIconModule,
+    MatListModule,
+    MatSidenavModule,    
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
