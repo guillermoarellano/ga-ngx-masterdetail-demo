@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { 
   MatIconModule, 
@@ -9,11 +10,12 @@ import {
 } from '@angular/material';
 import {LayoutModule} from '@angular/cdk/layout';
 
-
 import { AppComponent } from './app.component';
 import { SidenavComponent } from './layout/sidenav.component';
 import { ReposListComponent } from './repos/repos-list.component';
 import { RepoLanguagesComponent } from './repos/repo-languages.component';
+
+import { ReposService } from './shared/repos.service';
 
 
 @NgModule({
@@ -26,13 +28,14 @@ import { RepoLanguagesComponent } from './repos/repo-languages.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     LayoutModule,
     MatIconModule,
     MatListModule,
     MatSidenavModule,    
     MatToolbarModule,
   ],
-  providers: [],
+  providers: [ ReposService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
