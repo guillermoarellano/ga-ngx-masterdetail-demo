@@ -1,8 +1,10 @@
 # Ga-Ngx-Master-Detail-Demo
 
-This project was initially generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
 
-Web Config file was ejected from CLI for further custom manual configuration.
+## Project Considerations
+
+The Angular CLI uses Webpack as its bundler. It can be ejected from CLI for further custom manual configuration. As this was a simple SPA, I did not split out and configure for Production. The project uses TypeScript as its transpiler. It works very similar to Babel with the extra benefit of type checking. Instead of ESLint the project uses TSLint. They are similar with main differences being some of the linting rules applied by each of the packages to JavaScript.
 
 ## Prerequisites
 
