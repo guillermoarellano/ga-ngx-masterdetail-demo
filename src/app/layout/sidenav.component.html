@@ -1,12 +1,12 @@
 <div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
   <mat-toolbar color="primary" class="example-toolbar">
-    <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+    <button mat-icon-button (click)="sidenav.toggle()"><mat-icon>menu</mat-icon></button>
     <h1 class="example-app-name">Master-Detail Demo app</h1>
   </mat-toolbar>
 
   <mat-sidenav-container class="example-sidenav-container" 
                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #snav [opened]="true" 
+    <mat-sidenav #sidenav [opened]="true" 
                 [mode]="mobileQuery.matches ? 'over' : 'side'"
                 [fixedInViewport]="mobileQuery.matches" 
                 fixedTopGap="56">
@@ -14,15 +14,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content>
-      <app-repo-languages></app-repo-languages>
-<!--       
-      <mat-list>
-        <h3 matSubheader>Repo Coding Languages</h3>
-        <mat-list-item *ngFor="let content of fillerContent">
-            <p> {{content}} </p>
-        </mat-list-item>
-     </mat-list> -->
-     
+        <app-repo-languages></app-repo-languages>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -8,7 +8,7 @@ import { ReposService } from '../shared/repos.service';
   styleUrls: ['./repos-list.component.scss']
 })
 export class ReposListComponent implements OnInit {
-  repos=[];
+  repos: any[];
   selectedRepo: string = "";
   errorMessage: string = "";
 
@@ -16,6 +16,11 @@ export class ReposListComponent implements OnInit {
 
   ngOnInit() {
     this.getReposFromService();
+  }
+
+  handleSelectedRepo(repo_name: string) {
+    this.selectedRepo = repo_name;
+    console.log(this.selectedRepo);
   }
 
   private getReposFromService() {

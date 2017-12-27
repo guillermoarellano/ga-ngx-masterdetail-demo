@@ -1,4 +1,4 @@
 <mat-nav-list>
   <h3 matSubheader>Repo Names</h3>
-  <a mat-list-item routerLink="." *ngFor="let repo of repos">{{repo.name}}</a>
+  <a mat-list-item *ngFor="let repo of repos" (click)="handleSelectedRepo(repo.name)">{{repo.name}}</a>
 </mat-nav-list>

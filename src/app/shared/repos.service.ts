@@ -19,7 +19,10 @@ export class ReposService {
   }
 
   getRepoLanguages(repoName: string) {
-
+    const repoLanguagesAPIUrl = `${this._heremapsGihubRepoLangUrl}/${repoName}/languages`;
+    return this._http.get(repoLanguagesAPIUrl)
+      .map((response) => Object.keys(response))
+      .catch(this.handleError);
   }
   
   private handleError(err: HttpErrorResponse) {
