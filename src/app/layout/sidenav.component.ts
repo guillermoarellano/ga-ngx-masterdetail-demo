@@ -10,11 +10,7 @@ import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class SidenavComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
-
-  fillerNav = Array(5).fill(0).map((_, i) => `Nav Item ${i + 1}`);
-
-  fillerContent = Array(9).fill(0).map(() =>
-      `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod`);
+  selectedRepoName: string;
 
   private _mobileQueryListener: () => void;
 
@@ -25,9 +21,13 @@ export class SidenavComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-
   }
+
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);
+  }
+
+  handleSelectedRepo(event) {
+    this.selectedRepoName = event;
   }
 }

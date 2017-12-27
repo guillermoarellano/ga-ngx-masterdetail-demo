@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 import { ReposService } from '../shared/repos.service';
 
@@ -9,7 +9,7 @@ import { ReposService } from '../shared/repos.service';
 })
 export class ReposListComponent implements OnInit {
   repos: any[];
-  selectedRepo: string = "";
+  @Output() selectedRepo: EventEmitter<string> = new EventEmitter<string>();
   errorMessage: string = "";
 
   constructor(private _reposService: ReposService) { }
@@ -18,9 +18,8 @@ export class ReposListComponent implements OnInit {
     this.getReposFromService();
   }
 
-  handleSelectedRepo(repo_name: string) {
-    this.selectedRepo = repo_name;
-    console.log(this.selectedRepo);
+  onSelectedRepo(repo: any) {
+    this.selectedRepo.emit(repo.name);
   }
 
   private getReposFromService() {

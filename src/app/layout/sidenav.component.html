@@ -10,11 +10,11 @@
                 [mode]="mobileQuery.matches ? 'over' : 'side'"
                 [fixedInViewport]="mobileQuery.matches" 
                 fixedTopGap="56">
-      <app-repos-list></app-repos-list>
+      <app-repos-list (selectedRepo)="handleSelectedRepo($event)"></app-repos-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
-        <app-repo-languages></app-repo-languages>
+        <app-repo-languages [repoName]="selectedRepoName"></app-repo-languages>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

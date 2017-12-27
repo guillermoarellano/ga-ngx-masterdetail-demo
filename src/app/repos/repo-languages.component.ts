@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 import { ReposService } from '../shared/repos.service';
 
@@ -7,12 +7,18 @@ import { ReposService } from '../shared/repos.service';
   templateUrl: './repo-languages.component.html',
   styleUrls: ['./repo-languages.component.scss']
 })
-export class RepoLanguagesComponent {
+export class RepoLanguagesComponent implements OnChanges {
   codingLanguages: any[];
   errorMessage: string = "";
   @Input() repoName: string;
   
   constructor(private _reposService: ReposService) { }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['repoName']){
+      console.log(`RepoLanguagesComponent is triggered. The value of local repoName is ${this.repoName}`);
+    }
+  }
 
   getCodeLanguagesFromService() {
     this._reposService.getRepoLanguages('bike-navigation').subscribe(
