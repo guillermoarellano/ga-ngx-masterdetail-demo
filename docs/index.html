@@ -281,16 +281,30 @@
                    <div class="content-data">
 
 <h1 id="ga-ngx-master-detail-demo">Ga-Ngx-Master-Detail-Demo</h1>
-<p>This project was initially generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 1.6.2.</p>
-<p>Web Config file was ejected from CLI for custom manual configuration.</p>
+<p>This project was generated with <a href="https://github.com/angular/angular-cli">Angular CLI</a> version 1.6.2.</p>
+<h2 id="project-considerations">Project Considerations</h2>
+<p>The Angular CLI uses Webpack as its bundler. It can be ejected from CLI for further custom manual configuration. As this was a simple SPA, I did not split out and configure for Production. The project uses TypeScript as its transpiler. It works very similar to Babel with the extra benefit of type checking. Instead of ESLint the project uses TSLint. They are similar with main differences being some of the linting rules applied by each of the packages to JavaScript.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>The demo project has library dependencies that require Node 6.9.0 or higher, together with NPM 3 or higher in order to install and run the commands listed below. You cannot go further if you do not install these itesm. Please click on this <a href="https://nodejs.org/en/">link</a> to install Node/NPM before you continue.</p>
+<h2 id="download-and-installation">Download and installation</h2>
+<ol>
+<li>Download the Zip file version of this code from this Github repository</li>
+<li>Extract the contents into a folder on your documents or desktop machine</li>
+<li>Open a command terminal and navigate to the extracted contents folder directory</li>
+<li>Run <code>npm install</code> to install the dependencies for the app</li>
+<li>To run, follow the instructions below to initiate the development server and other pieces of the application</li>
+</ol>
 <h2 id="development-server">Development server</h2>
 <p>Run <code>ng serve</code> for a dev server. Navigate to <code>http://localhost:4200/</code>. The app will automatically reload if you change any of the source files.</p>
 <h2 id="code-scaffolding">Code scaffolding</h2>
 <p>Run <code>ng generate component component-name</code> to generate a new component. You can also use <code>ng generate directive|pipe|service|class|guard|interface|enum|module</code>.</p>
 <h2 id="build">Build</h2>
 <p>Run <code>ng build</code> to build the project. The build artifacts will be stored in the <code>dist/</code> directory. Use the <code>-prod</code> flag for a production build.</p>
+<h2 id="documentation-server">Documentation server</h2>
+<p>Run <code>npm run compodoc</code> to generate and run a server that serves documentation files of the app. Navigate to <code>http://localhost:3003/</code>to inspect the documentation. The document server will automatically update if any files are updated.</p>
 <h2 id="running-unit-tests">Running unit tests</h2>
 <p>Run <code>ng test</code> to execute the unit tests via <a href="https://karma-runner.github.io">Karma</a>.</p>
+<p>To see code coverage, run <code>ng test --code-coverage</code> and then open the <code>/coverage/index.html</code> file</p>
 <h2 id="running-end-to-end-tests">Running end-to-end tests</h2>
 <h3 id="there-are-no-end-to-end-tests-for-this-project">There are no end-to-end tests for this project</h3>
 <p>Run <code>ng e2e</code> to execute the end-to-end tests via <a href="http://www.protractortest.org/">Protractor</a>.</p>
@@ -299,7 +313,8 @@
 <ul>
 <li>[ ] Add more information about the repo in main content section</li>
 <li>[ ] Add integration tests for the APIs</li>
-<li>[ ] Get at least 70% code test coverage</li>
+<li>[ ] Add more working unit tests</li>
+<li>[ ] Get at least 70% code test coverage for unit tests</li>
 <li>[ ] Add spinners to denote asynchronous data loads</li>
 <li>[ ] Add icon imagery for representing code language</li>
 <li>[ ] Enhance display of repo information with expansion panels</li>
