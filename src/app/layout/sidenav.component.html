@@ -6,7 +6,7 @@
 
   <mat-sidenav-container class="example-sidenav-container" 
                         [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
-    <mat-sidenav #sidenav [opened]="true" 
+    <mat-sidenav #sidenav [(opened)]="opened" 
                 [mode]="mobileQuery.matches ? 'over' : 'side'"
                 [fixedInViewport]="mobileQuery.matches" 
                 fixedTopGap="56">

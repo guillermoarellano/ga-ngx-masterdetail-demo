@@ -15,13 +15,13 @@ export class RepoLanguagesComponent implements OnChanges {
   constructor(private _reposService: ReposService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['repoName']){
-      console.log(`RepoLanguagesComponent is triggered. The value of local repoName is ${this.repoName}`);
+    if (changes['repoName'] && (this.repoName !== null && this.repoName !== undefined)){
+      this.getCodeLanguagesFromService();
     }
   }
 
   getCodeLanguagesFromService() {
-    this._reposService.getRepoLanguages('bike-navigation').subscribe(
+    this._reposService.getRepoLanguages(this.repoName).subscribe(
       data => this.codingLanguages = data,
       error => this.errorMessage = <any>error);
   }
