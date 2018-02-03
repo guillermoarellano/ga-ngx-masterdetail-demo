@@ -1,7 +1,7 @@
 // the core modules
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { async, TestBed } from '@angular/core/testing';
+import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 
 // the necessary modules for component to render
 import { 
@@ -19,7 +19,11 @@ import { ReposListComponent } from './repos/repos-list.component';
 import { ReposService } from './shared/repos.service';
 import { RepoLanguagesComponent } from './repos/repo-languages.component';
 
-describe('AppComponent', () => {
+fdescribe('AppComponent', () => {
+
+  let fixture: ComponentFixture<AppComponent>;
+  let component: AppComponent;
+  let reposService: ReposService;
   
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -42,18 +46,20 @@ describe('AppComponent', () => {
         ReposService
       ]
     }).compileComponents();
+
+    // create component and test fixture
+    fixture = TestBed.createComponent(AppComponent);
+
+    // get test component from the fixture
+    component = fixture.componentInstance;
+
+    // ReposService provided to the TestBed
+    reposService = TestBed.get(ReposService) ;
+
   }));
 
   it('should create the app', async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
-  }));
-
-  it(`should have as title 'app'`, async(() => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app');
+    expect(component).toBeTruthy();
   }));
 
 });
