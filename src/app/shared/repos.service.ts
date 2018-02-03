@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ReposService {
   private _heremapsGithubReposUrl = 'https://api.github.com/users/heremaps/repos';
-  private _heremapsGihubRepoLangUrl = 'https://api.github.com/repos/heremaps'; //append /:repo_name/languages to Url
+  private _heremapsGithubRepoLangUrl = 'https://api.github.com/repos/heremaps'; //append /:repo_name/languages to Url
 
   constructor(private _http: HttpClient) { }
 
@@ -19,7 +19,7 @@ export class ReposService {
   }
 
   getRepoLanguages(repoName: string) {
-    const repoLanguagesAPIUrl = `${this._heremapsGihubRepoLangUrl}/${repoName}/languages`;
+    const repoLanguagesAPIUrl = `${this._heremapsGithubRepoLangUrl}/${repoName}/languages`;
     return this._http.get(repoLanguagesAPIUrl)
       .map((response) => Object.keys(response))
       .catch(this.handleError);
