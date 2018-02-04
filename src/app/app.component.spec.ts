@@ -19,7 +19,7 @@ import { ReposListComponent } from './repos/repos-list.component';
 import { ReposService } from './shared/repos.service';
 import { RepoLanguagesComponent } from './repos/repo-languages.component';
 
-fdescribe('AppComponent', () => {
+describe('AppComponent', () => {
 
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;

@@ -2,9 +2,12 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed, inject } from '@angular/core/testing';
 
+// the service being tested
 import { ReposService } from './repos.service';
 
-describe('ReposService', () => {
+fdescribe('Service: ReposService', () => {
+  let testBedService: ReposService;
+
   beforeEach(() => {
     TestBed.configureTestingModule({
       imports: [
