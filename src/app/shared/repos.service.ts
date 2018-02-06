@@ -9,7 +9,7 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class ReposService {
   private _heremapsGithubReposUrl = 'https://api.github.com/users/heremaps/repos';
-  private _heremapsGithubRepoLangUrl = 'https://api.github.com/repos/heremaps'; //append /:repo_name/languages to Url
+  private _heremapsGithubRepoLangUrl = 'https://api.github.com/repos/heremaps'; // append /:repo_name/languages to Url
 
   constructor(private _http: HttpClient) { }
 
@@ -26,7 +26,7 @@ export class ReposService {
       .map((response) => Object.keys(response))
       .catch(this.handleError);
   }
-  
+
   private handleError(err: HttpErrorResponse) {
     let errorMsg = '';
 

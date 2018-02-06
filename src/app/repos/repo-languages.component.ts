@@ -9,13 +9,13 @@ import { ReposService } from '../shared/repos.service';
 })
 export class RepoLanguagesComponent implements OnChanges {
   codingLanguages: any[];
-  errorMessage: string = "";
+  errorMessage = '';
   @Input() repoName: string;
-  
+
   constructor(private _reposService: ReposService) { }
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['repoName'] && (this.repoName !== null && this.repoName !== undefined)){
+    if (changes['repoName'] && (this.repoName !== null && this.repoName !== undefined)) {
       this.getCodeLanguagesFromService();
     }
   }

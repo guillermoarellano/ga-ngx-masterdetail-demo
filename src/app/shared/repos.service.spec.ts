@@ -6,7 +6,6 @@ import { TestBed, inject } from '@angular/core/testing';
 import { ReposService } from './repos.service';
 
 fdescribe('Service: ReposService', () => {
-  let testBedService: ReposService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({

@@ -10,7 +10,7 @@ import { ReposService } from '../shared/repos.service';
 export class ReposListComponent implements OnInit {
   repos: any[];
   @Output() selectedRepo: EventEmitter<string> = new EventEmitter<string>();
-  errorMessage: string = "";
+  errorMessage = '';
 
   constructor(private _reposService: ReposService) { }
 

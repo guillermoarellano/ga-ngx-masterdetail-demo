@@ -4,7 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { async, TestBed, ComponentFixture } from '@angular/core/testing';
 
 // the necessary modules for component to render
-import { 
+import {
   MatIconModule,
   MatListModule,
   MatSidenavModule,
@@ -24,7 +24,7 @@ describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
   let component: AppComponent;
   let reposService: ReposService;
-  
+
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
@@ -33,7 +33,7 @@ describe('AppComponent', () => {
         ReposListComponent,
         RepoLanguagesComponent
       ],
-      imports: [ 
+      imports: [
         BrowserAnimationsModule,
         HttpClientModule,
         LayoutModule,
@@ -42,7 +42,7 @@ describe('AppComponent', () => {
         MatSidenavModule,
         MatToolbarModule
       ],
-      providers: [ 
+      providers: [
         ReposService
       ]
     }).compileComponents();
