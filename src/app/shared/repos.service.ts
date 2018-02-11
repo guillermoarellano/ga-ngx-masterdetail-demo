@@ -21,7 +21,6 @@ export class ReposService {
   getRepoLanguages(repoName: string) {
     const repoLanguagesAPIUrl = `${this._heremapsGithubRepoLangUrl}/${repoName}/languages`;
 
-    console.log(repoLanguagesAPIUrl);
     return this._http.get(repoLanguagesAPIUrl)
       .map((response) => Object.keys(response))
       .catch(this.handleError);

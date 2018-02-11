@@ -10,7 +10,7 @@ import { ChangeDetectorRef, Component, OnInit, OnDestroy } from '@angular/core';
 })
 export class SidenavComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
-  selectedRepoName: string;
+  selectedRepoName = '';
   opened = false;
 
   private _mobileQueryListener: () => void;
